@@ -7,11 +7,13 @@
  
 
 ### STEPS TO START LARAVEL
+
 ####1) docker-compose --project-name pompy up -d --build
 
 ####2) docker  exec -it pompy_php /bin/bash (get inside container)
 
 ####3) cd /app cd public (just go to the source folder where you will install laravel)
+
 ####4) curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 ####(get composer -- in case composer doesnt work)
