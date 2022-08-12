@@ -1,7 +1,8 @@
-FROM php:8.1.1-fpm
+FROM php:8.1-fpm
 
-RUN pecl install xdebug && docker-php-ext-enable xdebug
-
+RUN echo "Hello From Pompy"
+RUN echo "========================="
+RUN echo "Installing php extensions"
 RUN apt update \
         && apt install -y \
             g++ \
@@ -16,9 +17,9 @@ RUN apt update \
             pdo \
             pdo_pgsql \
             pgsql \
-            pdo_mysql \
-            exif \
+			pdo_mysql \
+			mysqli  \
+            exif 
 
-
-			
+RUN php -m		
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
