@@ -98,17 +98,17 @@ and edit
 resources/views/mytables/index.blade.php  
 
 
-  <table>  
+  \<table\>  
   @foreach ($mytables as $mytable)  
-            <tr>  
-                <td>{{ $loop->index + 1 }}</td>  
-                <td>{{ $mytable->name }}</td>  
-                <td>{{ $mytable->description }}</td>  
-                <td>{{ $mytable->year }}</td>  
-            </tr>  
+            \<tr\>  
+                \<td\>{{ $loop->index + 1 }}\</td\>  
+                \<td\>{{ $mytable->name }}\</td\>  
+                \<td\>{{ $mytable->description }}\</td\>  
+                \<td\>{{ $mytable->year }}\</td\>  
+            \</tr\>  
         @endforeach  
 	  	
-</table>  
+\</table\>  
 
 * Now in /routes/web.php  
 add  
