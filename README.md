@@ -2,8 +2,9 @@
 ```
 git clone https://github.com/pompy/laravel_docker_setup
 ```
-Create app/public folder and place your php files or laravel project  
-Its mapped with port 81 to access. Test url: http://localhost:81/yourphpfile.php 
+Create app/public folder and place  laravel project.Its mapped with port 81 to access. 
+Incase you want to test a php file then create another folder public (within public folder). Laravel installation creates another public folder within root. You may modify nginx.conf according to your requirement. 
+Test url: http://localhost:81/yourphpfile.php 
  
 
 ### STEPS TO START LARAVEL
@@ -35,7 +36,7 @@ composer create-project laravel/laravel .
 sudo chmod -R ugo+rw storage
 ```
 
-#### 7) try to run http://localhost:81/public/  to see default page of laravel. If page loads all is well.
+#### 7) try to run http://localhost:81/ to see default page of laravel. If page loads all is well.
 
 #### 8) Below are mostly to do with Laravel related operations (Some knowledge of laravel migration & seeding is important)
 
@@ -134,7 +135,7 @@ resources/views/mytables/index.blade.php
 ```
 Route::get('/', [App\Http\Controllers\MyTableController::class, 'index']);  
 ```
-Now run http://localhost:81/public/ in browser to see this page   
+Now run http://localhost:81/ in browser to see this page   
 
 # Also to add columns
 ## To add column
