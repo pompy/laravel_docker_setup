@@ -90,9 +90,9 @@ Add
 > (table will get created as you would see in the console)
 
 ##  Also google adminer and load adminer.php to access database and see if table is created. It should also show data.
-```
+
 <https://www.adminer.org/>
-```
+
 
 ##  Create controller  
 ```
