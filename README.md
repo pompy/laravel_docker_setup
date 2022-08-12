@@ -1,5 +1,5 @@
 # Docker yml setup for php, mysql and nginx and instructions for laravel setup
-git clone https://github.com/pompy/laravel_docker_setup  
+```git clone https://github.com/pompy/laravel_docker_setup  
 Create app/public folder and place your php files or laravel project  
 Its mapped with port 81 to access. Test url: http://localhost:81/yourphpfile.php 
  
