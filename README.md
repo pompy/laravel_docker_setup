@@ -12,7 +12,7 @@
 
 #### 2) docker  exec -it pompy_php /bin/bash (get inside container)
 
-#### 3) cd /app cd public (just go to the source folder where you will install laravel)
+#### 3) cd /app cd public (just go to the source folder where you will install laravel. Create app/public folder )
 
 #### 4) curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
