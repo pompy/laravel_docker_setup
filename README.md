@@ -8,31 +8,34 @@ Its mapped with port 81 to access. Test url: http://localhost:81/yourphpfile.php
 
 ### STEPS TO START LARAVEL
 
-#### 1) 
+#### 1) Build your docker
 ```
 docker-compose --project-name pompy up -d --build
 ```
 
-#### 2) docker  exec -it pompy_php /bin/bash (get inside container)
+#### 2) Bash your container
+```
+docker  exec -it pompy_php /bin/bash
+```
 
-#### 3) cd /app cd public (just go to the source folder where you will install laravel. Create app/public folder [in your folder where you are running  docker yml file] )
+#### 3) cd /app cd public (just go to the source folder where you will install laravel. Create app/public folder [in your folder where you are running  docker yml file] ) Your bash path should loook something like root@3434:/app/public#
 
-#### 4) curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-> (get composer -- in case composer doesnt work)
+#### 4) Get composer -- in case composer doesnt work (Optional)
+```
+curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+```
 
 #### 5) composer create-project laravel/laravel . 
 > (Laravel will be installed)
 
 #### 6) storage  permission for laravel
+```
+sudo chmod -R ugo+rw storage
+```
 
-> sudo chmod -R ugo+rw storage
+#### 7) try to run http://localhost:81/public/  to see default page of laravel
 
-#### 7) try to run http://localhost:81/public/  
-
-> You will see the page
-
-#### 8) Other Handy commands and stuffs
+#### 8) Below are mostly to do with Laravel related operations
 
 
 ## Change laravel database set settings in .env similar to below unless you change them.
