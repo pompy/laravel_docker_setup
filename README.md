@@ -35,7 +35,7 @@ composer create-project laravel/laravel .
 sudo chmod -R ugo+rw storage
 ```
 
-#### 7) try to run http://localhost:81/public/  to see default page of laravel
+#### 7) try to run http://localhost:81/public/  to see default page of laravel. If page loads all is well.
 
 #### 8) Below are mostly to do with Laravel related operations (Some knowledge of laravel migration & seeding is important)
 
