@@ -25,8 +25,10 @@ docker  exec -it pompy_php /bin/bash
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 ```
 
-#### 5) composer create-project laravel/laravel . 
-> (Laravel will be installed)
+#### 5) Install Laravel inside bash at this location root@3434:/app/public#
+```
+composer create-project laravel/laravel .
+```
 
 #### 6) storage  permission for laravel
 ```
