@@ -32,12 +32,12 @@
 
 
 Change laravel database set settings in .env similar to below unless you change them.
-DB_CONNECTION=mysql
-DB_HOST=mysql
-DB_PORT=3306
-DB_DATABASE=mydb
-DB_USERNAME=admin
-DB_PASSWORD=admin
+DB_CONNECTION=mysql  
+DB_HOST=mysql  
+DB_PORT=3306  
+DB_DATABASE=mydb  
+DB_USERNAME=admin  
+DB_PASSWORD=admin  
 
 
 * You can login into bash using (to fire various commands)
@@ -47,15 +47,15 @@ docker  exec -it pompy_php /bin/bash
 
 * Now goto /database/migrations/YYYY_MM_DD_HHMMSS_create_mytable_table.php and update up function with below
 
-  $table->id();
-  $table->text('name');
-  $table->string('description');
-  $table->string('year');
-  $table->timestamps();
+  $table->id();  
+  $table->text('name');  
+  $table->string('description');  
+  $table->string('year');  
+  $table->timestamps();  
 
 *  Now goto /database/seeders/MyTableSeeder.php and add inside run function
-  MyTable::factory()->times(50)->create();
-& add model at the top
+  MyTable::factory()->times(50)->create();  
+& add model at the top  
  use App\Models\MyTable;
 
 
