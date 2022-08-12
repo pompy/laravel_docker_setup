@@ -17,8 +17,8 @@ RUN apt update \
             pdo \
             pdo_pgsql \
             pgsql \
-			pdo_mysql \
-			mysqli  \
+	    pdo_mysql \
+	    mysqli  \
             exif 
 
 RUN php -m		
