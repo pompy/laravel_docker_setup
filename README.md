@@ -97,7 +97,7 @@ touch resources/views/mytables/index.blade.php
 and edit
 resources/views/mytables/index.blade.php
 
-  
+  {{
   <table>  
   @foreach ($mytables as $mytable)  
             <tr>  
@@ -109,7 +109,7 @@ resources/views/mytables/index.blade.php
         @endforeach  
 	  	
 </table>  
-
+}}
 * Now in /routes/web.php  
 add  
 Route::get('/', [App\Http\Controllers\MyTableController::class, 'index']);  
