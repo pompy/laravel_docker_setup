@@ -8,7 +8,8 @@ Its mapped with port 81 to access. Test url: http://localhost:81/yourphpfile.php
 
 ### STEPS TO START LARAVEL
 
-#### 1) ```
+#### 1) 
+```
 docker-compose --project-name pompy up -d --build
 ```
 
