@@ -8,7 +8,7 @@
 
 ### STEPS TO START LARAVEL
 
-> #### 1) docker-compose --project-name pompy up -d --build
+#### 1) docker-compose --project-name pompy up -d --build
 
 #### 2) docker  exec -it pompy_php /bin/bash (get inside container)
 
@@ -16,17 +16,18 @@
 
 #### 4) curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-####(get composer -- in case composer doesnt work)
+> (get composer -- in case composer doesnt work)
 
-#### 5) composer create-project laravel/laravel . (Laravel will be installed)
+#### 5) composer create-project laravel/laravel . 
+> (Laravel will be installed)
 
 #### 6) storage  permission for laravel
 
-####sudo chmod -R ugo+rw storage
+> sudo chmod -R ugo+rw storage
 
 #### 7) try to run http://localhost:81/public/  
 
-####You will see the page
+> You will see the page
 
 #### 8) Other Handy commands and stuffs
 
