@@ -190,11 +190,16 @@ Route::get('/', [App\Http\Controllers\MyTableController::class, 'index']);
 php artisan migrate:refresh --path=/database/migrations/newtable.php
 ```
 > 
-## Another way
-> php artisan tinker
-> Schema::table('my_tables', function(\Illuminate\Database\Schema\Blueprint $table){ $table->integer('isadded'); })
+## Another tinker
+```
+php artisan tinker
+```
+``` 
+Schema::table('my_tables', function(\Illuminate\Database\Schema\Blueprint $table){ $table->integer('isadded'); })
+```
+## Migrate refresh and fresh
 > 
-> You can use refresh instead of fresh so that data isnt removed
+> You can use migrate:refresh instead of migrate:fresh so that data isnt removed
 > 
  
 ## Other handy commands
