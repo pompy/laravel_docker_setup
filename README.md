@@ -28,12 +28,12 @@
 
 ####You will see the page
 
-####8) Other Handy commands
+####8) Other Handy commands and stuffs
 
-####docker ps
+docker ps
 
-####docker-compose down
+docker-compose down
 
-####docker-compose down --remove-orphans
+docker-compose down --remove-orphans
 
 
