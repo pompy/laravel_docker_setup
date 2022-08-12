@@ -132,6 +132,7 @@ resources/views/mytables/index.blade.php
 ```
 Route::get('/', [App\Http\Controllers\MyTableController::class, 'index']);  
 ```
+Now run http://localhost:81/public/ in browser to see this page   
 
 # Also to add columns
 ## To add column
