@@ -1,4 +1,4 @@
-# Docker yml setup for php, mysql and nginx and instructions for laravel setup
+# Docker yml setup for php 8.1, mysql and nginx and instructions for laravel setup
 ```
 git clone https://github.com/pompy/laravel_docker_setup
 ```
