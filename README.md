@@ -91,13 +91,13 @@ public function index(){
         return view('mytables.index', ['mytables' => Quote::all()]);  
     }  
   
-* Now u need to create view files
-mkdir resources/views/mytables
-touch resources/views/mytables/index.blade.php
-and edit
-resources/views/mytables/index.blade.php
+* Now u need to create view files  
+mkdir resources/views/mytables  
+touch resources/views/mytables/index.blade.php  
+and edit  
+resources/views/mytables/index.blade.php  
 
-  {{
+
   <table>  
   @foreach ($mytables as $mytable)  
             <tr>  
@@ -109,7 +109,7 @@ resources/views/mytables/index.blade.php
         @endforeach  
 	  	
 </table>  
-}}
+
 * Now in /routes/web.php  
 add  
 Route::get('/', [App\Http\Controllers\MyTableController::class, 'index']);  
