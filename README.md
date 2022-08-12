@@ -35,10 +35,10 @@ sudo chmod -R ugo+rw storage
 
 #### 7) try to run http://localhost:81/public/  to see default page of laravel
 
-#### 8) Below are mostly to do with Laravel related operations
+#### 8) Below are mostly to do with Laravel related operations (Some knowledge of laravel migration & seeding is important)
 
 
-## Change laravel database set settings in .env similar to below unless you change them.
+## Change laravel database  settings in .env variable. (Settings should match with credentials in docker-compose file)
 > DB_CONNECTION=mysql  
 > DB_HOST=mysql  
 > DB_PORT=3306  
@@ -50,7 +50,10 @@ sudo chmod -R ugo+rw storage
 ##  You can login into bash using (to fire various commands)
 > docker  exec -it pompy_php /bin/bash
 
-##  php artisan make:model MyTable -fms
+##  Make model 
+```
+artisan make:model MyTable -fms
+```
 
 ##  Now goto /database/migrations/YYYY_MM_DD_HHMMSS_create_mytable_table.php and update up function with below
 
@@ -87,9 +90,14 @@ Add
 > (table will get created as you would see in the console)
 
 ##  Also google adminer and load adminer.php to access database and see if table is created. It should also show data.
+```
+<https://www.adminer.org/>
+```
 
-##  Also u can create controller  
-> php artisan make:controller MyTableController  
+##  Create controller  
+```
+php artisan make:controller MyTableController  
+```
   
 and inside /app/Http/Controllers/MyTableController.php  
   
@@ -121,9 +129,9 @@ resources/views/mytables/index.blade.php
 
 ##  Now in /routes/web.php  
   
-
-> Route::get('/', [App\Http\Controllers\MyTableController::class, 'index']);  
-
+```
+Route::get('/', [App\Http\Controllers\MyTableController::class, 'index']);  
+```
 
 # Also to add columns
 ## To add column
@@ -188,7 +196,9 @@ resources/views/mytables/index.blade.php
 > 
  
 ## Other handy commands
+```
 > docker ps  
 > docker-compose down  
-> docker-compose down --remove-orphans  
+> docker-compose down --remove-orphans 
+```
 
