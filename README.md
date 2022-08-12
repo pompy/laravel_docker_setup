@@ -33,91 +33,95 @@
 
 
 Change laravel database set settings in .env similar to below unless you change them.
-DB_CONNECTION=mysql  
-DB_HOST=mysql  
-DB_PORT=3306  
-DB_DATABASE=mydb  
-DB_USERNAME=admin  
-DB_PASSWORD=admin  
+> DB_CONNECTION=mysql  
+> DB_HOST=mysql  
+> DB_PORT=3306  
+> DB_DATABASE=mydb  
+> DB_USERNAME=admin  
+> DB_PASSWORD=admin  
 
 
 * You can login into bash using (to fire various commands)
-docker  exec -it pompy_php /bin/bash
+> docker  exec -it pompy_php /bin/bash
 
 * php artisan make:model MyTable -fms
 
 * Now goto /database/migrations/YYYY_MM_DD_HHMMSS_create_mytable_table.php and update up function with below
 
-  $table->id();  
-  $table->text('name');  
-  $table->string('description');  
-  $table->string('year');  
-  $table->timestamps();  
+  > $table->id();  
+  > $table->text('name');  
+  > $table->string('description');  
+  > $table->string('year');  
+  > $table->timestamps();  
 
 *  Now goto /database/seeders/MyTableSeeder.php and add inside run function  
-  MyTable::factory()->times(50)->create();    
-& add model at the top    
- use App\Models\MyTable;  
+  
+  > MyTable::factory()->times(50)->create();    
+  > & add model at the top    
+  > use App\Models\MyTable;  
 
 
 * Now @ /database/seeders/DatabaseSeeder.php  
 Add  
-$this->call(  
-            [  
-                MyTableSeeder::class  
-            ]  
-        );   
+> $this->call(  
+>           [  
+>                MyTableSeeder::class  
+>            ]  
+>        );   
   
 * Now @ /database/factories/MyTableFactory.php add  
   
-return [  
-            'name' => $this->faker->sentence(),  
-            'description' => $this->faker->name(),  
-            'year' => $this->faker->year(),  
-        ];  
+> return [  
+>           'name' => $this->faker->sentence(),  
+>             'description' => $this->faker->name(),  
+>             'year' => $this->faker->year(),  
+>         ];  
   
 * Run php artisan migrate:fresh --seed
-(table will get created as you would see in the console)
+> (table will get created as you would see in the console)
 
 * Also google adminer and load adminer.php to access database and see if table is created. It should also show data.
 
 * Also u can create controller  
-php artisan make:controller MyTableController  
+> php artisan make:controller MyTableController  
   
 and inside /app/Http/Controllers/MyTableController.php  
   
-use App\Models\MyTable;    
+> use App\Models\MyTable;    
   
-public function index(){  
-        return view('mytables.index', ['mytables' => Quote::all()]);  
-    }  
+> public function index(){  
+>         return view('mytables.index', ['mytables' => Quote::all()]);  
+>     }  
   
 * Now u need to create view files  
-mkdir resources/views/mytables  
-touch resources/views/mytables/index.blade.php  
+> mkdir resources/views/mytables  
+> touch resources/views/mytables/index.blade.php  
+
 and edit  
 resources/views/mytables/index.blade.php  
 
 
-  \<table\>  
-  @foreach ($mytables as $mytable)  
-            \<tr\>  
-                \<td\>{{ $loop->index + 1 }}\</td\>  
-                \<td\>{{ $mytable->name }}\</td\>  
-                \<td\>{{ $mytable->description }}\</td\>  
-                \<td\>{{ $mytable->year }}\</td\>  
-            \</tr\>  
-        @endforeach  
-	  	
-\</table\>  
+>   \<table\>  
+>   @foreach ($mytables as $mytable)  
+>             \<tr\>  
+>                 \<td\>{{ $loop->index + 1 }}\</td\>  
+>                 \<td\>{{ $mytable->name }}\</td\>  
+>                 \<td\>{{ $mytable->description }}\</td\>  
+>                 \<td\>{{ $mytable->year }}\</td\>  
+>             \</tr\>  
+>         @endforeach  
+>	  	
+> \</table\>  
 
 * Now in /routes/web.php  
 add  
-Route::get('/', [App\Http\Controllers\MyTableController::class, 'index']);  
+
+> Route::get('/', [App\Http\Controllers\MyTableController::class, 'index']);  
 
 
 
-docker ps  
-docker-compose down  
-docker-compose down --remove-orphans  
+* Other handy commands
+> docker ps  
+> docker-compose down  
+> docker-compose down --remove-orphans  
 
