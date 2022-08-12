@@ -8,7 +8,7 @@
 
 ### STEPS TO START LARAVEL
 
-#### 1) docker-compose --project-name pompy up -d --build
+> #### 1) docker-compose --project-name pompy up -d --build
 
 #### 2) docker  exec -it pompy_php /bin/bash (get inside container)
 
