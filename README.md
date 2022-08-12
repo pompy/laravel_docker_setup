@@ -186,7 +186,9 @@ Route::get('/', [App\Http\Controllers\MyTableController::class, 'index']);
 > 
 > 
 ## Rought way to add a new table
-> php artisan migrate:refresh --path=/database/migrations/newtable.php
+```
+php artisan migrate:refresh --path=/database/migrations/newtable.php
+```
 > 
 ## Another way
 > php artisan tinker
