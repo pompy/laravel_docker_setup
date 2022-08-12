@@ -123,32 +123,44 @@ add
 > To add column
 > php artisan make:migration add_isdeleted_to_my_tables_table --table=my_tables
 > 2022_08_12_120536_add_isdeleted_to_my_tables_table file created inside /database/migrations
+> 
 > inside up()
+> 
 > $table->integer('isdeleted');
+> 
 > inside down()
+> 
 > $table->dropColumn('isdeleted');
+> 
 > Then fire 
+> 
 > php artisan migrate
 > 
 > In case anything goes wrong
 > php artisan migrate:rollback
 > 
 > Also you can add after a particular column 
+> 
 > eg: $table->integer('isdeleted')->after('id');
 > 
 > 
 > Add column
 > php artisan make:migration add_isactive_to_my_tables
+> 
 > for up() -- $table->integer('isactive')->nullable()->after('isdeleted');
+> 
 > for down() -- $table->dropColumn('isactive');
 > 
 > For foreign keys
 > for up() -- 
 > $table->bigInteger('address_id')->unsigned()->nullable()->after('tel_number');
+> 
 > $table->foreign('address_id')->references('id')->on('addresses')->onDelete('SET NULL');
+> 
 > 
 > for down() --
 > $table->dropForeign(['address_id']);
+> 
 > $table->dropColumn('address_id');
 > 
 > 
