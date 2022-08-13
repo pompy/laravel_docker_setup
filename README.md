@@ -207,7 +207,8 @@ Schema::table('my_tables', function(\Illuminate\Database\Schema\Blueprint $table
 > 
 
 ## Handy Stuff For Laravel CRUD Rest Api (api.php) and web page rendering
-### Rest Api - Edit inside api.php
+### Rest Api - Edit  api.php 
+#### Sample url http://localhost:81/api/test/
 ``` 
 use App\Http\Controllers\QuoteController;
 
@@ -219,6 +220,86 @@ Route::get('/quote/{id}',[QuoteController::class, 'show']);
 Route::post('/quote',[QuoteController::class, 'store']);
 Route::put('/quote/{id}',[QuoteController::class, 'update']);
 Route::delete('/quote/{id}',[QuoteController::class, 'destroy']);
+``` 
+
+### Web Rendering (basically frontend) - Edit  web.php 
+#### Sample url http://localhost:81/
+``` 
+Route::get('/', [App\Http\Controllers\QuoteController::class, 'all']);
+``` 
+### Controller Editing - Edit QuoteController.php  (Make sure you also have the model defined)
+``` 
+use App\Models\Quote;
+
+	 public function all(){
+		return view('quotes.index', ['quotes' => Quote::all()]);
+    }
+	
+	  public function index(){
+        $quote = Quote::all();
+        return response()->json($quote);
+    }
+	
+	
+	 public function show($id) {
+        $quote = Quote::find($id);
+        if(!empty($quote))
+        {
+            return response()->json($quote);
+        }
+        else
+        {
+            return response()->json([
+                "message" => "Record not found"
+            ], 404);
+        }
+    }
+	
+		public function store(Request $request) {
+        $quote = new Quote;
+        $quote->quote = $request->quote;
+        $quote->historian = $request->historian;
+        $quote->year = $request->year;
+        $quote->updated_at = $request->updated_at;
+        $quote->save();
+        return response()->json([
+            "message" => "Record Added."
+        ], 201);
+    }
+	
+	public function update(Request $request, $id){
+        if (Quote::where('id', $id)->exists()) {
+            $quote = Quote::find($id);
+            $quote->quote = is_null($request->quote) ? $quote->quote : $request->quote;
+            $quote->historian = is_null($request->historian) ? $quote->historian : $request->historian;
+            $quote->year = is_null($request->year) ? $quote->year : $request->year;
+            $quote->updated_at = is_null($request->updated_at) ? $quote->updated_at : $request->updated_at;
+            $quote->save();
+            return response()->json([
+                "message" => "Record Updated."
+            ], 204);
+        }else{
+            return response()->json([
+                "message" => "Record Not Found."
+            ], 404);
+        }
+    }
+	
+	
+	public function destroy($id){
+        if(Quote::where('id', $id)->exists()) {
+            $quote = Quote::find($id);
+            $quote->delete();
+
+            return response()->json([
+              "message" => "records deleted."
+            ], 202);
+        } else {
+            return response()->json([
+              "message" => "Record not found."
+            ], 404);
+        }
+    }
 ``` 
 
 ## Other handy commands
