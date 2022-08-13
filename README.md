@@ -232,10 +232,9 @@ Route::get('/', [App\Http\Controllers\QuoteController::class, 'all']);
 use App\Models\Quote;
 
 	 public function all(){
-		return view('quotes.index', ['quotes' => Quote::all()]);
-    }
+		return view('quotes.index', ['quotes' => Quote::all()]); }
 	
-	  public function index(){
+	 public function index(){
         $quote = Quote::all();
         return response()->json($quote);
     }
@@ -255,7 +254,7 @@ use App\Models\Quote;
         }
     }
 	
-		public function store(Request $request) {
+	public function store(Request $request) {
         $quote = new Quote;
         $quote->quote = $request->quote;
         $quote->historian = $request->historian;
