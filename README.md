@@ -205,7 +205,22 @@ Schema::table('my_tables', function(\Illuminate\Database\Schema\Blueprint $table
 > 
 > You can use migrate:refresh instead of migrate:fresh so that data isnt removed
 > 
- 
+
+## Handy Stuff For Laravel CRUD Rest Api (api.php) and web page rendering
+### Rest Api - Edit inside api.php
+``` 
+use App\Http\Controllers\QuoteController;
+
+Route::get('/test', function () {return "pompy is testing";});
+
+
+Route::get('/quote',[QuoteController::class, 'index']);
+Route::get('/quote/{id}',[QuoteController::class, 'show']);
+Route::post('/quote',[QuoteController::class, 'store']);
+Route::put('/quote/{id}',[QuoteController::class, 'update']);
+Route::delete('/quote/{id}',[QuoteController::class, 'destroy']);
+``` 
+
 ## Other handy commands
 ```
 > docker ps  
