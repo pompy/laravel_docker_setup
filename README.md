@@ -19,7 +19,7 @@ docker-compose --project-name pompy up -d --build
 docker  exec -it pompy_php /bin/bash
 ```
 
-#### 3) cd /app cd public (just go to the source folder where you will install laravel. Create app/public folder [in your folder where you are running  docker yml file] ) Your bash path should loook something like root@3434:/app/public#
+#### 3) cd /app cd public (just go to the source folder where you will install laravel. Create app/public folder [in your folder where you are running  docker yml file] ) Your bash path should loook something like root@3434:/app/public#       [In case you want to run  stray php file then just create another public folder within public and place your php files - Ngnix setting is done for latest laravel framework v9 and you are always free to change it]
 
 #### 4) Get composer -- in case composer doesnt work (Optional)
 ```
